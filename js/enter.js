@@ -6,6 +6,13 @@
         '.submit': { x: 0, y: 80, scale: 0.55, rotate: 8 }
     };
 
+    const choiceMaskMotion = {
+        '.choice-query': { x: 120, y: -35, scale: 0.9, rotate: 8 },
+        '.choice-frame': { x: -35, y: 55, scale: 0.88, rotate: -3 },
+        '.choice-title': { x: -65, y: -18, scale: 0.82, rotate: -5 },
+        '.choice-list': { x: 55, y: 35, scale: 0.82, rotate: 4 }
+    };
+
     const entranceMotion = {
         '.tachie': { x: 70, y: -18, scale: 0.94 },
         '.left': { x: -90, y: 0, scale: 0.98 },
@@ -69,6 +76,27 @@
             .then(() => {
                 animations.forEach((animation) => animation.cancel());
                 mask.__entranceAnimations = null;
+            });
+    };
+
+    window.enterChoiceMask = () => {
+        const choiceMask = document.querySelector('.choice-mask');
+
+        if (!choiceMask || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            return Promise.resolve();
+        }
+
+        if (choiceMask.__entranceAnimations) {
+            choiceMask.__entranceAnimations.forEach((animation) => animation.cancel());
+        }
+
+        const animations = animateElements(choiceMask, choiceMaskMotion, 820, 90);
+        choiceMask.__entranceAnimations = animations;
+
+        return Promise.all(animations.map((animation) => animation.finished))
+            .then(() => {
+                animations.forEach((animation) => animation.cancel());
+                choiceMask.__entranceAnimations = null;
             });
     };
 

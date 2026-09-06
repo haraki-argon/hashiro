@@ -19,6 +19,19 @@
 		</div>
 	</div>
 
+	<div class="choice-mask" style="display: none;" aria-hidden="true">
+		<div class="choice-query" aria-hidden="true"></div>
+		<p class="choice-query-label" aria-hidden="true">SELECT</p>
+		<div class="choice-frame">
+			<p class="choice-kicker">DECISION / 01</p>
+			<h1 class="choice-title"></h1>
+			<div class="choice-list" role="listbox" aria-label="选择一个选项"></div>
+			<div class="choice-actions">
+				<button class="choice-submit" type="button" disabled>決定</button>
+			</div>
+		</div>
+	</div>
+
 	<div class="panel">
 		<div class="tachie">
 			<img src="img/normal.png" alt="" />
@@ -55,7 +68,7 @@
 	</div>
 
 </body>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	window.onload = function () {
 		document.addEventListener('touchstart', function (event) {
 			if (event.touches.length > 1) {
@@ -74,8 +87,9 @@
 			event.preventDefault();
 		});
 	}
-</script>
+</script> -->
 <script src="js/content.js"></script>
+<script src="js/data.js"></script>
 <script src="js/dialog.js"></script>
 <script src="js/live.js"></script>
 <script src="js/enter.js"></script>
