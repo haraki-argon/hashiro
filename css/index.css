@@ -1,3 +1,15 @@
+@font-face {
+	font-family: "Zarame Gothic Black";
+	src: url("../font/zarame.woff") format("woff");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Tamanegi_geki";
+	src: url("../font/tamanegi.woff") format("woff");
+	font-display: swap;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -555,5 +567,120 @@
 	.mask .input,
 	.mask .submit {
 		animation: none;
+	}
+}
+
+@media screen and (max-width: 430px) {
+
+	.panel,
+	.mask {
+		min-height: 100svh;
+	}
+
+	.tachie {
+		width: 94vw;
+		height: 53svh;
+	}
+
+	.tachie img {
+		width: 106vw;
+		margin-right: -10vw;
+		margin-top: -1vh;
+	}
+
+	.left {
+		width: 54vw;
+		clip-path: polygon(0 0, 100% 0, 100% 55%, 0 61%);
+	}
+
+	.left p {
+		font-size: min(33vw, 16vh);
+	}
+
+	.name {
+		top: 46.5%;
+		right: 4%;
+		font-size: clamp(2.2rem, 11vw, 3rem);
+	}
+
+	.status {
+		top: 51%;
+		padding-top: 8%;
+		padding-left: 8%;
+	}
+
+	.status .bar {
+		width: 59vw;
+		height: 1.35em;
+	}
+
+	.status .ins {
+		height: 1.35em;
+	}
+
+	.panel>p.dialog {
+		top: 64.5%;
+		left: 5vw;
+		width: 90vw;
+		font-size: clamp(1.05rem, 5vw, 1.4rem);
+		line-height: 1.45;
+	}
+
+	.panel .dialog_next {
+		top: 76%;
+		right: calc(5vw + env(safe-area-inset-right));
+		font-size: 1.4em;
+	}
+
+	.panel .pulse {
+		height: 24%;
+		font-size: 32vw;
+		line-height: 52vw;
+	}
+
+	.panel .bottom {
+		height: calc(3em + env(safe-area-inset-bottom));
+		padding-top: 0.8em;
+		padding-bottom: env(safe-area-inset-bottom);
+		font-size: clamp(1rem, 4.2vw, 1.4rem);
+		line-height: 3.2em;
+	}
+
+	.panel .bottom p {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5em;
+		margin: 0 4vw;
+		white-space: nowrap;
+	}
+
+	.panel .bottom p span {
+		float: none;
+		margin-right: 0;
+	}
+
+	.mask .title {
+		top: 28%;
+		left: 6%;
+		font-size: clamp(2.5rem, 13vw, 4rem);
+	}
+
+	.mask .input {
+		top: 39%;
+		left: 6%;
+		width: 82vw;
+		font-size: clamp(1.35rem, 7vw, 2rem);
+	}
+
+	.mask .submit {
+		top: 49%;
+		width: min(44vw, 11rem);
+		font-size: clamp(1.4rem, 7vw, 2rem);
+		padding: 0.42em 1.2vw;
+	}
+
+	.mask .query p {
+		font-size: 46vw;
 	}
 }

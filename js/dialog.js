@@ -164,6 +164,7 @@
             submit.addEventListener('click', (event) => {
                 event.preventDefault();
                 event.stopPropagation();
+                input.blur();
                 mask.style.display = 'none';
                 mask.setAttribute('aria-hidden', 'true');
                 activeQuestionPromise = null;
